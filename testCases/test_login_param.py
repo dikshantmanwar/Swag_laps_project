@@ -21,10 +21,8 @@ class Test_Url_login():
         self.log.info("Entering password")
         self.lp.click_on_login()
         self.driver.save_screenshot('C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_succesfull.png')
-
         self.log.info("click on log in button")
         self.lp.click_on_menu()
-
         self.lp.click_on_logout()
         self.log.info("click on logout button")
         self.driver.save_screenshot('C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot'
