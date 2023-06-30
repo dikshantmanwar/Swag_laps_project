@@ -1,74 +1,38 @@
-
-
-
-
-
-
-2023-06-17 12:29:41,106: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:29:41,106: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:29:41,410: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:29:41,410: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:29:42,314: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:29:42,314: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:29:42,762: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:29:42,762: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:29:49,594: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:29:49,594: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:29:49,754: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:29:49,754: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:29:50,266: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:29:50,266: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:29:50,602: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:29:50,602: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:30:58,859: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:30:58,859: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:30:58,997: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:30:58,997: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:30:59,340: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:30:59,340: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:31:16,491: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:31:16,491: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:31:16,624: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:31:16,624: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:31:22,090: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:31:22,090: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:31:22,912: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:31:22,912: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:53:10,950: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:53:10,978: INFO : Test_Url_login : test_login: login test is pass
-2023-06-17 12:53:11,997: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:53:12,356: INFO : Test_Url_login : test_login: test_login is Completed
-2023-06-17 12:55:35,698: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:55:35,698: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:55:35,809: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:55:35,809: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:55:36,150: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:55:36,150: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:56:00,595: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:56:00,595: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:56:00,797: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:56:00,797: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:56:01,297: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:56:01,297: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:56:02,089: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:56:02,089: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:56:30,377: INFO : Test_Url_login : test_login: Entering username----->
-2023-06-17 12:56:30,377: INFO : Test_Url_login : test_login: Entering username----->
-2023-06-17 12:56:30,482: INFO : Test_Url_login : test_login: Entering password------>
-2023-06-17 12:56:30,482: INFO : Test_Url_login : test_login: Entering password------>
-2023-06-17 12:56:30,657: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:56:30,657: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:56:30,687: INFO : Test_Url_login : test_login: login test is pass
-2023-06-17 12:56:30,687: INFO : Test_Url_login : test_login: login test is pass
-2023-06-17 12:56:31,684: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:56:31,684: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:56:32,101: INFO : Test_Url_login : test_login: test_login is Completed
-2023-06-17 12:56:32,101: INFO : Test_Url_login : test_login: test_login is Completed
-2023-06-17 12:57:21,705: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:57:21,705: INFO : Test_Url_login : test_login: Entering username
-2023-06-17 12:57:21,807: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:57:21,807: INFO : Test_Url_login : test_login: Entering password
-2023-06-17 12:57:27,267: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:57:27,267: INFO : Test_Url_login : test_login: click on log in button
-2023-06-17 12:57:28,147: INFO : Test_Url_login : test_login: click on logout button
-2023-06-17 12:57:28,147: INFO : Test_Url_login : test_login: click on logout button
+2023-06-30 21:38:50,004: INFO : Test_Url_login : test_login: Entering username---->standard_user
+2023-06-30 21:38:50,111: INFO : Test_Url_login : test_login: Entering password---------->standard_user
+2023-06-30 21:38:50,563: INFO : Test_Url_login : test_login: click on log in button
+2023-06-30 21:38:50,729: INFO : Test_Url_login : test_login: Entering username---->locked_out_user
+2023-06-30 21:38:50,838: INFO : Test_Url_login : test_login: Entering password---------->locked_out_user
+2023-06-30 21:38:50,973: INFO : Test_Url_login : test_login: Click on menu button
+2023-06-30 21:38:51,226: INFO : Test_Url_login : test_login: click on log in button
+2023-06-30 21:38:51,652: INFO : Test_Url_login : test_login: Click on logout button
+2023-06-30 21:38:51,653: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-06-30 21:38:51,836: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-06-30 21:38:56,998: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-06-30 21:38:57,120: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-06-30 21:39:26,982: INFO : Test_Url_login : test_login: Entering username---->problem_user
+2023-06-30 21:39:27,082: INFO : Test_Url_login : test_login: Entering password---------->problem_user
+2023-06-30 21:39:27,520: INFO : Test_Url_login : test_login: click on log in button
+2023-06-30 21:39:27,823: INFO : Test_Url_login : test_login: Click on menu button
+2023-06-30 21:39:28,496: INFO : Test_Url_login : test_login: Click on logout button
+2023-06-30 21:39:28,497: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-06-30 21:39:28,587: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-06-30 21:39:31,612: INFO : Test_Url_login : test_login: Entering username---->performance_glitch_user
+2023-06-30 21:39:31,709: INFO : Test_Url_login : test_login: Entering password---------->performance_glitch_user
+2023-06-30 21:39:37,113: INFO : Test_Url_login : test_login: click on log in button
+2023-06-30 21:39:37,398: INFO : Test_Url_login : test_login: Click on menu button
+2023-06-30 21:39:38,037: INFO : Test_Url_login : test_login: Click on logout button
+2023-06-30 21:39:38,039: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-06-30 21:39:38,151: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-06-30 23:18:13,268: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-06-30 23:18:16,370: INFO : Test_Url_login : test_login: Entering username----->standard_user
+2023-06-30 23:20:51,693: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-06-30 23:20:51,835: INFO : Test_By_Prodct : test_by_product: Entering password------>secret_sauce
+2023-06-30 23:27:41,401: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-06-30 23:27:41,540: INFO : Test_By_Prodct : test_by_product: Entering password------>secret_sauce
+2023-06-30 23:28:46,003: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-06-30 23:28:46,143: INFO : Test_By_Prodct : test_by_product: Entering password------>secret_sauce
+2023-06-30 23:35:52,770: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-06-30 23:35:52,903: INFO : Test_By_Prodct : test_by_product: Entering password------>secret_sauce
+2023-06-30 23:37:05,944: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-06-30 23:37:06,091: INFO : Test_By_Prodct : test_by_product: Entering password------>secret_sauce

@@ -1,4 +1,5 @@
 
+
 import pytest
 from selenium import webdriver
 
@@ -19,17 +20,16 @@ def setup(browser):
     driver.implicitly_wait(5)
     return driver
 
-
-
-
 @pytest.fixture(params= [
-    ("standard_user", "secret_sauce"),
-    ("locked_out_user", "secret_sauce"),
-    ("problem_user", "secret_sauce"),
-    ("performance_glitch_user", "secret_sauce")
-])
+    ("standard_user", "secret_sauce",'Pass'),
+    ("locked_out_user", "secret_sauce",'Fail'),
+    ("problem_user", "secret_sauce",'Pass'),
+    ("performance_glitch_user", "secret_sauce",'Pass')])
+
 def getDataForLogin(request):
     return request.param
+
+
 # standard_user
 # locked_out_user
 # problem_user
