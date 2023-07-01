@@ -12,6 +12,8 @@ from Utilitis.Logger import LogGen
 from PageObject.By_Product import By_product
 
 class Test_By_Prodct():
+    backpack_id = (By.ID, 'add-to-cart-sauce-labs-backpack')
+    t_shirt_id = (By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)")
 
     url=ReadValue.getUrl()
     username=ReadValue.getusername()

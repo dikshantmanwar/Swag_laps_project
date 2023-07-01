@@ -1,4 +1,5 @@
 
+
 import pytest
 from selenium import webdriver
 
@@ -27,7 +28,6 @@ def setup(browser):
 
 def getDataForLogin(request):
     return request.param
-
 
 
 # standard_user
