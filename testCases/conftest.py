@@ -29,3 +29,8 @@ def setup(browser):
 def getDataForLogin(request):
     return request.param
 
+
+# standard_user
+# locked_out_user
+# problem_user
+# performance_glitch_user
