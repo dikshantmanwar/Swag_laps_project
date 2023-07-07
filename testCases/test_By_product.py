@@ -33,9 +33,11 @@ class Test_By_Prodct():
         self.lp.get_password(self.password)
         self.log.info("Entering password------>"+ self.password)
         self.lp.click_on_login()
+        self.log.info('click on login button')
 
 
         self.by.click_on_backpack()
+        self.log.info('Click on backpack button')
         self.by.click_on_t_shirt()
 
         self.by.click_on_cart_icon()
@@ -45,7 +47,11 @@ class Test_By_Prodct():
         self.by.enter_firstname("Dikshant")
         self.by.enter_lastname('Manwat')
         self.by.enter_postal_code(345234)
+        self.log.info('Enter all detail ')
 
         self.by.click_on_contineu_btn()
+        self.log.info('Click on contineu button')
         self.by.click_on_finish_btn()
+        self.log.info('Click on finish button')
         time.sleep(5)
+        self.driver.close()

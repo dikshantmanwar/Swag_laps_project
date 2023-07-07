@@ -14,6 +14,8 @@ def browser(request):
 def setup(browser):
     if browser == 'chrome':
         driver=webdriver.Chrome()
+    elif browser=='edge':
+        driver=webdriver.Edge()
     else:
         driver=webdriver.Chrome()
     driver.maximize_window()
@@ -29,8 +31,12 @@ def setup(browser):
 def getDataForLogin(request):
     return request.param
 
+import pytest
 
-# standard_user
-# locked_out_user
-# problem_user
-# performance_glitch_user
+@pytest.hookimpl(tryfirst=True)
+def pytest_html_report_title(report):
+    report.title = "My Test Report"
+
+@pytest.hookimpl(tryfirst=True)
+def pytest_html_results_summary(prefix, summary, postfix):
+    prefix.append('<h2>My Custom Header</h2>')

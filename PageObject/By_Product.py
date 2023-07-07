@@ -54,3 +54,4 @@ class By_product():
      def click_on_finish_btn(self):
          self.wait.until(expected_conditions.presence_of_element_located(self.finish_btn_id))
          self.driver.find_element(*By_product.finish_btn_id).click()
+     
