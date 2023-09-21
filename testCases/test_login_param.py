@@ -1,6 +1,7 @@
 
-import time
 
+
+import time
 from Utilitis.readproperties import ReadValue
 from PageObject.LoginPage import Login
 from Utilitis.Logger import LogGen

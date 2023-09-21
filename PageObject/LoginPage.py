@@ -1,5 +1,3 @@
-
-
 from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -44,5 +42,4 @@ class Login():
              return True
          except (NoSuchElementException, TimeoutException):
              return False
-
 

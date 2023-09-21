@@ -32,7 +32,6 @@ def getDataForLogin(request):
     return request.param
 
 import pytest
-
 @pytest.hookimpl(tryfirst=True)
 def pytest_html_report_title(report):
     report.title = "My Test Report"
@@ -40,3 +39,4 @@ def pytest_html_report_title(report):
 @pytest.hookimpl(tryfirst=True)
 def pytest_html_results_summary(prefix, summary, postfix):
     prefix.append('<h2>My Custom Header</h2>')
+
