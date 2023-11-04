@@ -1,11 +1,7 @@
 
-
-
-import time
 from Utilitis.readproperties import ReadValue
 from PageObject.LoginPage import Login
 from Utilitis.Logger import LogGen
-
 
 class Test_Url_login():
 
@@ -31,7 +27,6 @@ class Test_Url_login():
             self.log.info('login test is pass')
             self.driver.save_screenshot(
                 'C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_succesfull.png')
-
             self.lp.click_on_menu()
             self.lp.click_on_logout()
             self.log.info("click on logout button")
@@ -45,4 +40,3 @@ class Test_Url_login():
             assert False
         self.driver.close()
         self.log.info("test_login is Completed")
-
