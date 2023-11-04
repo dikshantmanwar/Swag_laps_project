@@ -1,5 +1,4 @@
 
-
 pytest -- browser edge
 
 pytest -rA  --browser edge testCases/test_Login.py

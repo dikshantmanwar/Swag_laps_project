@@ -173,3 +173,41 @@
 2023-08-26 13:22:49,835: INFO : Test_Url_login : test_login: test_login_params is Passed
 2023-08-26 13:22:50,151: INFO : Test_Url_login : test_login: test_login_params is Completed
 2023-08-26 13:22:50,151: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-09-25 21:08:38,064: INFO : Test_Url_login : test_login: Entering username---->standard_user
+2023-09-25 21:08:38,065: INFO : Test_Url_login : test_login: Entering username---->locked_out_user
+2023-09-25 21:08:38,183: INFO : Test_Url_login : test_login: Entering username---->performance_glitch_user
+2023-09-25 21:08:38,849: INFO : Test_Url_login : test_login: Entering password---------->locked_out_user
+2023-09-25 21:08:38,850: INFO : Test_Url_login : test_login: Entering password---------->performance_glitch_user
+2023-09-25 21:08:38,873: INFO : Test_Url_login : test_login: Entering password---------->standard_user
+2023-09-25 21:08:39,574: INFO : Test_Url_login : test_login: click on log in button
+2023-09-25 21:08:39,979: INFO : Test_Url_login : test_login: click on log in button
+2023-09-25 21:08:40,687: INFO : Test_Url_login : test_login: Click on menu button
+2023-09-25 21:08:40,962: INFO : Test_Url_login : test_login: Click on logout button
+2023-09-25 21:08:40,962: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-09-25 21:08:41,207: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-09-25 21:08:43,435: INFO : Test_Url_login : test_login: Entering username---->problem_user
+2023-09-25 21:08:43,621: INFO : Test_Url_login : test_login: Entering password---------->problem_user
+2023-09-25 21:08:44,320: INFO : Test_Url_login : test_login: click on log in button
+2023-09-25 21:08:44,924: INFO : Test_Url_login : test_login: click on log in button
+2023-09-25 21:08:44,948: INFO : Test_Url_login : test_login: Click on menu button
+2023-09-25 21:08:45,159: INFO : Test_Url_login : test_login: Click on logout button
+2023-09-25 21:08:45,160: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-09-25 21:08:45,433: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-09-25 21:08:45,494: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-09-25 21:08:45,771: INFO : Test_Url_login : test_login: Click on menu button
+2023-09-25 21:08:45,803: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-09-25 21:08:46,585: INFO : Test_Url_login : test_login: Click on logout button
+2023-09-25 21:08:46,586: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-09-25 21:08:46,850: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-11-04 12:35:52,739: INFO : Test_Url_login : test_login: Entering username----->standard_user
+2023-11-04 12:35:52,920: INFO : Test_Url_login : test_login: Entering password------>secret_sauce
+2023-11-04 12:35:53,310: INFO : Test_Url_login : test_login: click on log in button
+2023-11-04 12:35:53,349: INFO : Test_Url_login : test_login: login test is pass
+2023-11-04 12:35:54,454: INFO : Test_Url_login : test_login: click on logout button
+2023-11-04 12:35:54,834: INFO : Test_Url_login : test_login: test_login is Completed
+2023-11-04 12:42:56,398: INFO : Test_Url_login : test_login: Entering username----->standard_user
+2023-11-04 12:42:56,597: INFO : Test_Url_login : test_login: Entering password------>secret_sauce
+2023-11-04 12:42:56,924: INFO : Test_Url_login : test_login: click on log in button
+2023-11-04 12:42:56,955: INFO : Test_Url_login : test_login: login test is pass
+2023-11-04 12:43:57,522: INFO : Test_Url_login : test_login: click on logout button
+2023-11-04 12:43:57,895: INFO : Test_Url_login : test_login: test_login is Completed
