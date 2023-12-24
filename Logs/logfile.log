@@ -76,3 +76,75 @@
 2023-12-24 20:09:30,954: INFO : Test_Url_login : test_login: Click on logout button
 2023-12-24 20:09:30,954: INFO : Test_Url_login : test_login: test_login_params is Passed
 2023-12-24 20:09:31,191: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:07:20,548: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-12-24 21:07:20,707: INFO : Test_By_Prodct : test_by_product: Entering password------>secret_sauce
+2023-12-24 21:07:21,076: INFO : Test_By_Prodct : test_by_product: click on login button
+2023-12-24 21:07:21,217: INFO : Test_By_Prodct : test_by_product: Click on backpack button
+2023-12-24 21:07:21,915: INFO : Test_By_Prodct : test_by_product: Enter all detail 
+2023-12-24 21:07:22,003: INFO : Test_By_Prodct : test_by_product: Click on contineu button
+2023-12-24 21:07:22,077: INFO : Test_By_Prodct : test_by_product: Click on finish button
+2023-12-24 21:07:30,185: INFO : TestUrlLogin : test_login: Entering username ----->standard_user
+2023-12-24 21:07:30,379: INFO : TestUrlLogin : test_login: Entering password ------> secret_sauce
+2023-12-24 21:07:30,612: INFO : TestUrlLogin : test_login: Click on login button
+2023-12-24 21:07:30,716: INFO : TestUrlLogin : test_login: Login test is pass
+2023-12-24 21:07:31,778: INFO : TestUrlLogin : test_login: Click on logout button
+2023-12-24 21:07:32,133: INFO : TestUrlLogin : test_login: Test login is Completed
+2023-12-24 21:07:35,099: INFO : Test_Url_login : test_login: Entering username---->standard_user
+2023-12-24 21:07:35,233: INFO : Test_Url_login : test_login: Entering password---------->standard_user
+2023-12-24 21:07:35,856: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:07:36,201: INFO : Test_Url_login : test_login: Click on menu button
+2023-12-24 21:07:36,839: INFO : Test_Url_login : test_login: Click on logout button
+2023-12-24 21:07:36,839: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:07:36,967: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:07:40,268: INFO : Test_Url_login : test_login: Entering username---->locked_out_user
+2023-12-24 21:07:40,484: INFO : Test_Url_login : test_login: Entering password---------->locked_out_user
+2023-12-24 21:07:41,071: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:07:46,783: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:07:46,959: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:07:50,008: INFO : Test_Url_login : test_login: Entering username---->problem_user
+2023-12-24 21:07:50,159: INFO : Test_Url_login : test_login: Entering password---------->problem_user
+2023-12-24 21:07:50,732: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:07:51,065: INFO : Test_Url_login : test_login: Click on menu button
+2023-12-24 21:07:51,700: INFO : Test_Url_login : test_login: Click on logout button
+2023-12-24 21:07:51,701: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:07:51,818: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:07:55,215: INFO : Test_Url_login : test_login: Entering username---->performance_glitch_user
+2023-12-24 21:07:55,347: INFO : Test_Url_login : test_login: Entering password---------->performance_glitch_user
+2023-12-24 21:08:00,866: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:08:01,206: INFO : Test_Url_login : test_login: Click on menu button
+2023-12-24 21:08:01,849: INFO : Test_Url_login : test_login: Click on logout button
+2023-12-24 21:08:01,849: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:08:01,987: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:39:10,925: INFO : Test_By_Prodct : test_by_product: Entering username----->standard_user
+2023-12-24 21:39:11,272: INFO : Test_By_Prodct : test_by_product: Entering password------>secret_sauce
+2023-12-24 21:39:11,487: INFO : Test_By_Prodct : test_by_product: click on login button
+2023-12-24 21:39:11,754: INFO : Test_By_Prodct : test_by_product: Click on backpack button
+2023-12-24 21:39:12,450: INFO : Test_By_Prodct : test_by_product: Enter all detail 
+2023-12-24 21:39:12,553: INFO : Test_By_Prodct : test_by_product: Click on contineu button
+2023-12-24 21:39:12,630: INFO : Test_By_Prodct : test_by_product: Click on finish button
+2023-12-24 21:39:20,926: INFO : Test_Url_login : test_login: Entering username---->standard_user
+2023-12-24 21:39:21,108: INFO : Test_Url_login : test_login: Entering password---------->standard_user
+2023-12-24 21:39:21,732: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:39:22,085: INFO : Test_Url_login : test_login: Click on menu button
+2023-12-24 21:39:22,724: INFO : Test_Url_login : test_login: Click on logout button
+2023-12-24 21:39:22,724: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:39:22,867: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:39:25,947: INFO : Test_Url_login : test_login: Entering username---->locked_out_user
+2023-12-24 21:39:26,088: INFO : Test_Url_login : test_login: Entering password---------->locked_out_user
+2023-12-24 21:39:26,422: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:39:32,132: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:39:32,413: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:39:36,023: INFO : Test_Url_login : test_login: Entering username---->problem_user
+2023-12-24 21:39:36,139: INFO : Test_Url_login : test_login: Entering password---------->problem_user
+2023-12-24 21:39:36,713: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:39:37,073: INFO : Test_Url_login : test_login: Click on menu button
+2023-12-24 21:39:37,711: INFO : Test_Url_login : test_login: Click on logout button
+2023-12-24 21:39:37,711: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:39:37,803: INFO : Test_Url_login : test_login: test_login_params is Completed
+2023-12-24 21:39:41,524: INFO : Test_Url_login : test_login: Entering username---->performance_glitch_user
+2023-12-24 21:39:41,685: INFO : Test_Url_login : test_login: Entering password---------->performance_glitch_user
+2023-12-24 21:39:47,234: INFO : Test_Url_login : test_login: click on log in button
+2023-12-24 21:39:47,602: INFO : Test_Url_login : test_login: Click on menu button
+2023-12-24 21:39:48,277: INFO : Test_Url_login : test_login: Click on logout button
+2023-12-24 21:39:48,279: INFO : Test_Url_login : test_login: test_login_params is Passed
+2023-12-24 21:39:48,382: INFO : Test_Url_login : test_login: test_login_params is Completed

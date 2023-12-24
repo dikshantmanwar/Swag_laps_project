@@ -1,6 +1,6 @@
 from Utilities.readproperties import ReadValue
-from PageObject.LoginPage import LoginPage
 from Utilities.Logger import LogGen
+from PageObject.LoginPage import LoginPage
 
 
 class TestUrlLogin:
@@ -13,23 +13,21 @@ class TestUrlLogin:
     PASSWORD = ReadValue.getPassword()
     LOG = LogGen.loggen()
 
-    def test_login(self, setup):
-        """
-        Test method for the login functionality.
-
-        :param setup: The test setup.
-        :return: None
-        """
-
+    def __init__(self, setup):
         self.driver = setup
         self.driver.get(self.URL)
 
         self.lp = LoginPage(self.driver)
 
+    def test_login(self):
+        """
+        Test method for the login functionality.
+        """
+
         self.lp.get_username(self.USERNAME)
-        self.LOG.info("Entering username ----->" + self.USERNAME)
+        self.LOG.info("Entering username ----->%s", self.USERNAME)
         self.lp.get_password(self.PASSWORD)
-        self.LOG.info("Entering password ------> " + self.PASSWORD)
+        self.LOG.info("Entering password ------> %s", self.PASSWORD)
         self.lp.click_on_login()
 
         self.LOG.info("Click on login button")
