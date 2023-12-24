@@ -6,10 +6,10 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from Utilitis.readproperties import ReadValue
-from PageObject.LoginPage import Login
-from Utilitis.Logger import LogGen
-from PageObject.By_Product import By_product
+from Utilities.readproperties import ReadValue
+from PageObject.LoginPage import LoginPage
+from Utilities.Logger import LogGen
+from PageObject.By_Product import ProductPage
 
 class Test_By_Prodct():
     backpack_id = (By.ID, 'add-to-cart-sauce-labs-backpack')
@@ -24,9 +24,9 @@ class Test_By_Prodct():
 
         self.driver=setup
         self.driver.get(self.url)
-        self.lp=Login(self.driver)
+        self.lp=LoginPage(self.driver)
 
-        self.by=By_product(self.driver)
+        self.by=ProductPage(self.driver)
 
         self.lp.get_username(self.username)
         self.log.info("Entering username----->"+ self.username)
@@ -42,14 +42,14 @@ class Test_By_Prodct():
 
         self.by.click_on_cart_icon()
 
-        self.by.click_on_ckeckout()
+        self.by.click_on_checkout()
 
-        self.by.enter_firstname("Dikshant")
-        self.by.enter_lastname('Manwat')
-        self.by.enter_postal_code(345234)
+        self.by.enter_first_name("Dikshant")
+        self.by.enter_last_name('Manwat')
+        self.by.enter_postal_code(34523423)
         self.log.info('Enter all detail ')
 
-        self.by.click_on_contineu_btn()
+        self.by.click_on_continue_btn()
         self.log.info('Click on contineu button')
         self.by.click_on_finish_btn()
         self.log.info('Click on finish button')

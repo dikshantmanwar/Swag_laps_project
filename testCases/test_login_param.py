@@ -2,9 +2,9 @@
 
 
 import time
-from Utilitis.readproperties import ReadValue
-from PageObject.LoginPage import Login
-from Utilitis.Logger import LogGen
+from Utilities.readproperties import ReadValue
+from PageObject.LoginPage import LoginPage
+from Utilities.Logger import LogGen
 
 
 class Test_Url_login():
@@ -17,7 +17,7 @@ class Test_Url_login():
         self.driver=setup
         self.driver.get(self.url)
 
-        self.lp=Login(self.driver)
+        self.lp=LoginPage(self.driver)
 
         self.lp.get_username(getDataForLogin[0])
         self.log.info("Entering username---->"+getDataForLogin[0])
