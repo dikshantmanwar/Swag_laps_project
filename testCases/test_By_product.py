@@ -1,14 +1,11 @@
 
-
-
-
 import time
 
 from selenium.webdriver.common.by import By
 
-from Utilitis.readproperties import ReadValue
+from Utilities.readproperties import ReadValue
 from PageObject.LoginPage import Login
-from Utilitis.Logger import LogGen
+from Utilities.Logger import LogGen
 from PageObject.By_Product import By_product
 
 class Test_By_Prodct():
