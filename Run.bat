@@ -8,3 +8,4 @@ pytest -rA -n=4  --browser chrome --html=Reports/report_param.html  testCases/te
 
 
 this is used for practice in of git fetch
+agin fetch used
