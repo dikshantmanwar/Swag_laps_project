@@ -26,8 +26,8 @@ jobs:
     - name: Download and set up WebDriver
       run: |
         wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/win64/chromedriver-win64.zip
-        unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/local/bin/
+        unzip chromedriver-win64.zip
+        mv chromedriver.exe C:/Program Files/Python311
 
     - name: Run Selenium Tests
       run: |
