@@ -7,3 +7,4 @@ pytest -rA -n=4  --browser chrome testCases/test_login_param.py
 pytest -rA -n=4  --browser chrome --html=Reports/report_param.html  testCases/test_login_param.py
 
 
+this is used for practice in of git fetch
