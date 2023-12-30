@@ -169,4 +169,5 @@ class ProductPage:
         self.wait.until(expected_conditions.presence_of_element_located(self.FINISH_BTN_ID))
         self.driver.find_element(*self.FINISH_BTN_ID).click()
 
-# this is in practice branch
+## this is in master branch
+
