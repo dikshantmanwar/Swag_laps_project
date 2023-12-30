@@ -7,8 +7,7 @@ class Test_url_login:
     url = ReadValue.getUrl()
     log = LogGen.loggen()
 
-    def test_login(self, setup, getDataForLogin):
-
+    def test_login_using_param(self, setup, getDataForLogin):
         self.driver = setup
         self.driver.get(self.url)
 
@@ -20,7 +19,8 @@ class Test_url_login:
         self.log.info("Entering password---------->" + getDataForLogin[0])
         self.lp.click_on_login()
         self.driver.save_screenshot(
-            'C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_succesfull.png')
+            "C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_succesfull.png"
+        )
         self.log.info("click on log in button")
 
         login_stauts = []
@@ -28,8 +28,9 @@ class Test_url_login:
             if getDataForLogin[2] == "Pass":
                 login_stauts.append("Pass")
                 self.driver.save_screenshot(
-                    'C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_test_pass'
-                    '.png')
+                    "C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_test_pass"
+                    ".png"
+                )
                 self.lp.click_on_menu()
                 self.log.info("Click on menu button")
                 self.lp.click_on_logout()
@@ -37,8 +38,9 @@ class Test_url_login:
             elif getDataForLogin[2] == "Fail":
                 login_stauts.append("Fail")
                 self.driver.save_screenshot(
-                    'C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_test_pass'
-                    '.png')
+                    "C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_test_pass"
+                    ".png"
+                )
                 self.lp.click_on_menu()
                 self.log.info("Click on menu button")
                 self.lp.click_on_logout()
@@ -49,13 +51,15 @@ class Test_url_login:
             if getDataForLogin[2] == "Fail":
                 login_stauts.append("Pass")
                 self.driver.save_screenshot(
-                    'C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_param_test_fail_'
-                    '.png')
+                    "C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_param_test_fail_"
+                    ".png"
+                )
             elif getDataForLogin[2] == "Pass":
                 login_stauts.append("Fail")
                 self.driver.save_screenshot(
-                    'C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_param_test_fail'
-                    '.png')
+                    "C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Screenshot\\login_param_test_fail"
+                    ".png"
+                )
         print(login_stauts)
 
         if "Fail" not in login_stauts:

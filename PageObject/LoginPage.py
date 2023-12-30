@@ -44,8 +44,6 @@
 #             return False
 
 
-
-
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -58,10 +56,10 @@ class LoginPage:
     """
 
     # Element locators
-    USERNAME_ID = (By.ID, 'user-name')
-    PASSWORD_ID = (By.ID, 'password')
-    LOGIN_ID = (By.ID, 'login-button')
-    MENU_BUTTON_ID = (By.ID, 'react-burger-menu-btn')
+    USERNAME_ID = (By.ID, "user-name")
+    PASSWORD_ID = (By.ID, "password")
+    LOGIN_ID = (By.ID, "login-button")
+    MENU_BUTTON_ID = (By.ID, "react-burger-menu-btn")
     LOGOUT_ID = (By.ID, "logout_sidebar_link")
 
     def __init__(self, driver):
@@ -80,7 +78,9 @@ class LoginPage:
         :param username: The username to enter.
         :return: None
         """
-        self.wait.until(expected_conditions.presence_of_element_located(self.USERNAME_ID))
+        self.wait.until(
+            expected_conditions.presence_of_element_located(self.USERNAME_ID)
+        )
         self.driver.find_element(*self.USERNAME_ID).send_keys(username)
 
     def get_password(self, password):
@@ -90,7 +90,9 @@ class LoginPage:
         :param password: The password to enter.
         :return: None
         """
-        self.wait.until(expected_conditions.presence_of_element_located(self.PASSWORD_ID))
+        self.wait.until(
+            expected_conditions.presence_of_element_located(self.PASSWORD_ID)
+        )
         self.driver.find_element(*self.PASSWORD_ID).send_keys(password)
 
     def click_on_login(self):
@@ -108,7 +110,9 @@ class LoginPage:
 
         :return: None
         """
-        self.wait.until(expected_conditions.element_to_be_clickable(self.MENU_BUTTON_ID))
+        self.wait.until(
+            expected_conditions.element_to_be_clickable(self.MENU_BUTTON_ID)
+        )
         self.driver.find_element(*self.MENU_BUTTON_ID).click()
 
     def click_on_logout(self):
@@ -127,7 +131,9 @@ class LoginPage:
         :return: True if the login is successful, False otherwise.
         """
         try:
-            self.wait.until(expected_conditions.presence_of_element_located(self.MENU_BUTTON_ID))
+            self.wait.until(
+                expected_conditions.presence_of_element_located(self.MENU_BUTTON_ID)
+            )
             self.driver.find_element(*self.MENU_BUTTON_ID)
             return True
         except (NoSuchElementException, TimeoutException):
