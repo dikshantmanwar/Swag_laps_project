@@ -1,6 +1,7 @@
 """
 This module used for login test
 """
+import pytest
 
 from Utilities.readproperties import ReadValue
 from Utilities.Logger import LogGen
@@ -16,7 +17,7 @@ class TestUrlLogin:
     USERNAME = ReadValue.getusername()
     PASSWORD = ReadValue.getPassword()
     LOG = LogGen.loggen()
-
+    @pytest.mark.login
     def test_login(self, setup):
         """
         Test method for the login functionality.
