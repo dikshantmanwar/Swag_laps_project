@@ -1,0 +1,6 @@
+2025-01-12 13:52:39,007: INFO : TestUrlLogin : test_login: Entering username ----->standard_user
+2025-01-12 13:52:39,149: INFO : TestUrlLogin : test_login: Entering password ------> secret_sauce
+2025-01-12 13:52:39,654: INFO : TestUrlLogin : test_login: Click on login button
+2025-01-12 13:52:39,737: INFO : TestUrlLogin : test_login: Login test is pass
+2025-01-12 13:52:40,867: INFO : TestUrlLogin : test_login: Click on logout button
+2025-01-12 13:52:41,282: INFO : TestUrlLogin : test_login: Test login is Completed
