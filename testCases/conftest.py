@@ -5,13 +5,25 @@ def pytest_addoption(parser):
     parser.addoption("--browser")
 
 
-@pytest.fixture()
+@pytest.fixture(scope="class")
 def browser(request):
     return request.config.getoption("--browser")
 
 
-@pytest.fixture()
-def setup(browser):
+# @pytest.fixture(scope='class')
+# def setup(browser):
+#     if browser == "chrome":
+#         driver = webdriver.Chrome()
+#     elif browser == "edge":
+#         driver = webdriver.Edge()
+#     else:
+#         driver = webdriver.Chrome()
+#
+#     driver.maximize_window()
+#     driver.implicitly_wait(5)
+#     return driver
+@pytest.fixture(scope="class")
+def setup(request, browser):
     if browser == "chrome":
         driver = webdriver.Chrome()
     elif browser == "edge":
@@ -21,9 +33,8 @@ def setup(browser):
 
     driver.maximize_window()
     driver.implicitly_wait(5)
+    request.cls.driver = driver
     return driver
-
-
 @pytest.fixture(
     params=[
         ("standard_user", "secret_sauce", "Pass"),

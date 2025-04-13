@@ -13,9 +13,18 @@ class ReadValue:
         return username
 
     @staticmethod
+    def invalidgetusername():
+        invalidusername = config.get("login_info", "invalidusername")
+        return invalidusername
+    @staticmethod
     def getPassword():
         password = config.get("login_info", "passwords")
         return password
+
+    @staticmethod
+    def invalidgetPassword():
+        invalidpassword = config.get("login_info", "invalidpasswords")
+        return invalidpassword
 
     @staticmethod
     def getUrl():

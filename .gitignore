@@ -1,3 +1,52 @@
-# Ignore Python bytecode files
-*.pyc
+# Byte-compiled / cache files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+env/
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+
+# Test reports, logs, screenshots
+Reports/
+*.log
+*.tmp
+*.png
+*.jpg
+
+# pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+.cache
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Setuptools distribution folders
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Local config files
+*.env
+.env.*
+
+# DS_Store (macOS)
+.DS_Store
