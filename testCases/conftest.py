@@ -42,7 +42,7 @@ def setup(request, browser):
         driver = webdriver.Chrome()
 
     driver.maximize_window()
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(20)
     request.cls.driver = driver
     return driver
 
