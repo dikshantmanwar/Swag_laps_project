@@ -16,28 +16,21 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
+        python-version: '3.11'  # Replace with your desired Python version
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Set up Google Chrome
-      uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: stable
-
-    - name: Set up ChromeDriver
-      uses: nanasess/setup-chromedriver@v2
-      with:
-        chromedriver-version: 'latest'
-
-    - name: Verify Chrome Version
-      run: google-chrome --version
+    - name: Download and set up WebDriver
+      run: |
+        wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/win64/chromedriver-win64.zip
+        unzip chromedriver-win64.zip
+        # Create the target directory if it doesn't exist
+        mkdir -p Driver
+        mv chromedriver-win64/chromedriver Driver/
 
     - name: Run Selenium Tests
-      env:
-        CI: true
       run: |
-        pytest -rA
+        pytest --maxfail=5 --disable-warnings -q  # Adjusted pytest options for better CI performance
