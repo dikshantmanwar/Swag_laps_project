@@ -1,33 +1,43 @@
+import os
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.edge.options import Options as EdgeOptions
 
 def pytest_addoption(parser):
-    parser.addoption("--browser")
-
+    parser.addoption("--browser", action="store", default="chrome")  # default set to chrome
 
 @pytest.fixture(scope="class")
 def browser(request):
     return request.config.getoption("--browser")
 
-
-# @pytest.fixture(scope='class')
-# def setup(browser):
-#     if browser == "chrome":
-#         driver = webdriver.Chrome()
-#     elif browser == "edge":
-#         driver = webdriver.Edge()
-#     else:
-#         driver = webdriver.Chrome()
-#
-#     driver.maximize_window()
-#     driver.implicitly_wait(5)
-#     return driver
 @pytest.fixture(scope="class")
 def setup(request, browser):
     if browser == "chrome":
-        driver = webdriver.Chrome()
+        options = Options()
+
+        # Enable headless mode only in CI (like GitHub Actions)
+        if os.getenv("CI", "").lower() == "true":
+            options.add_argument("--headless")
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--disable-gpu")
+            options.add_argument("--window-size=1920,1080")
+
+        driver = webdriver.Chrome(options=options)
+
     elif browser == "edge":
-        driver = webdriver.Edge()
+        options = EdgeOptions()
+
+        if os.getenv("CI", "").lower() == "true":
+            options.add_argument("--headless")
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--disable-gpu")
+            options.add_argument("--window-size=1920,1080")
+
+        driver = webdriver.Edge(options=options)
+
     else:
         driver = webdriver.Chrome()
 
@@ -35,6 +45,8 @@ def setup(request, browser):
     driver.implicitly_wait(5)
     request.cls.driver = driver
     return driver
+
+
 @pytest.fixture(
     params=[
         ("standard_user", "secret_sauce", "Pass"),
