@@ -32,4 +32,4 @@ jobs:
 
     - name: Run Selenium Tests
       run: |
-        pytest   testcases/
+        pytest -rA
