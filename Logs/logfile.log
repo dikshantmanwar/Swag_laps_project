@@ -1,24 +1,24 @@
-2025-04-13 19:08:28,509: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Test: Login with invalid username and password
-2025-04-13 19:08:28,698: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Navigated to URL: https://www.saucedemo.com/
-2025-04-13 19:08:29,836: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Entered invalid username: test
-2025-04-13 19:08:30,281: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Entered invalid password: 123test
-2025-04-13 19:08:30,551: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Clicked login button
-2025-04-13 19:08:30,624: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Captured error message: Epic sadface: Username and password do not match any user in this service
-2025-04-13 19:08:30,628: INFO : TestUrlLogin : test_login_without_username_and_with_password: Test: Login without username and with password
-2025-04-13 19:08:30,984: INFO : TestUrlLogin : test_login_without_username_and_with_password: Navigated to URL: https://www.saucedemo.com/
-2025-04-13 19:08:31,180: INFO : TestUrlLogin : test_login_without_username_and_with_password: Entered password only: 123test
-2025-04-13 19:08:31,362: INFO : TestUrlLogin : test_login_without_username_and_with_password: Clicked login button
-2025-04-13 19:08:31,404: INFO : TestUrlLogin : test_login_without_username_and_with_password: Captured error message: Epic sadface: Username is required
-2025-04-13 19:08:31,407: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Test: Login with username but no password
-2025-04-13 19:08:31,480: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Navigated to URL: https://www.saucedemo.com/
-2025-04-13 19:08:31,782: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Entered username only: test
-2025-04-13 19:08:32,447: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Clicked login button
-2025-04-13 19:08:32,481: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Captured error message: Epic sadface: Password is required
-2025-04-13 19:08:32,484: INFO : TestUrlLogin : test_login_valid_username_password: Test: Login with valid username and password
-2025-04-13 19:08:32,558: INFO : TestUrlLogin : test_login_valid_username_password: Navigated to URL: https://www.saucedemo.com/
-2025-04-13 19:08:32,692: INFO : TestUrlLogin : test_login_valid_username_password: Entered valid username: standard_user
-2025-04-13 19:08:32,806: INFO : TestUrlLogin : test_login_valid_username_password: Entered valid password: secret_sauce
-2025-04-13 19:08:33,198: INFO : TestUrlLogin : test_login_valid_username_password: Clicked login button
-2025-04-13 19:08:33,272: INFO : TestUrlLogin : test_login_valid_username_password: Login successful
-2025-04-13 19:08:34,412: INFO : TestUrlLogin : test_login_valid_username_password: Clicked logout
-2025-04-13 19:08:34,616: INFO : TestUrlLogin : test_login_valid_username_password: Test login completed
+2025-04-20 10:21:32,288: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Test: Login with invalid username and password
+2025-04-20 10:21:33,706: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Navigated to URL: https://www.saucedemo.com/
+2025-04-20 10:21:33,977: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Entered invalid username: test
+2025-04-20 10:21:34,170: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Entered invalid password: 123test
+2025-04-20 10:21:34,358: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Clicked login button
+2025-04-20 10:21:34,407: INFO : TestUrlLogin : test_login_with_invalid_username_and_password: Captured error message: Epic sadface: Username and password do not match any user in this service
+2025-04-20 10:21:34,410: INFO : TestUrlLogin : test_login_without_username_and_with_password: Test: Login without username and with password
+2025-04-20 10:21:34,730: INFO : TestUrlLogin : test_login_without_username_and_with_password: Navigated to URL: https://www.saucedemo.com/
+2025-04-20 10:21:34,893: INFO : TestUrlLogin : test_login_without_username_and_with_password: Entered password only: 123test
+2025-04-20 10:21:35,012: INFO : TestUrlLogin : test_login_without_username_and_with_password: Clicked login button
+2025-04-20 10:21:35,043: INFO : TestUrlLogin : test_login_without_username_and_with_password: Captured error message: Epic sadface: Username is required
+2025-04-20 10:21:35,045: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Test: Login with username but no password
+2025-04-20 10:21:35,161: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Navigated to URL: https://www.saucedemo.com/
+2025-04-20 10:21:35,285: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Entered username only: test
+2025-04-20 10:21:35,699: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Clicked login button
+2025-04-20 10:21:35,739: INFO : TestUrlLogin : test_login_with_valid_username_and_without_password: Captured error message: Epic sadface: Password is required
+2025-04-20 10:21:35,742: INFO : TestUrlLogin : test_login_valid_username_password: Test: Login with valid username and password
+2025-04-20 10:21:35,808: INFO : TestUrlLogin : test_login_valid_username_password: Navigated to URL: https://www.saucedemo.com/
+2025-04-20 10:21:35,960: INFO : TestUrlLogin : test_login_valid_username_password: Entered valid username: standard_user
+2025-04-20 10:21:36,098: INFO : TestUrlLogin : test_login_valid_username_password: Entered valid password: secret_sauce
+2025-04-20 10:21:36,319: INFO : TestUrlLogin : test_login_valid_username_password: Clicked login button
+2025-04-20 10:21:36,381: INFO : TestUrlLogin : test_login_valid_username_password: Login successful
+2025-04-20 10:21:37,569: INFO : TestUrlLogin : test_login_valid_username_password: Clicked logout
+2025-04-20 10:21:37,772: INFO : TestUrlLogin : test_login_valid_username_password: Test login completed
