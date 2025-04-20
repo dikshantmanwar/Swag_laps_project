@@ -1,10 +1,14 @@
+import os
 from configparser import ConfigParser
 
 config = ConfigParser()
-config.read(
-    "C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Configuration\\config.ini"
-)
+# config.read(
+#     "C:\\Users\\Admin\\PycharmProjects\\Swag_Labs_Project\\Configuration\\config.ini"
+# )
 
+# Dynamically get the absolute path to config.ini
+config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "Configuration", "config.ini")
+config.read(os.path.abspath(config_path))
 
 class ReadValue:
     @staticmethod
