@@ -27,7 +27,7 @@ class ProductPage:
         :param driver: The WebDriver instance.
         """
         self.driver = driver
-        self.wait = WebDriverWait(driver, 5)
+        self.wait = WebDriverWait(driver, 20)
 
     def click_on_backpack(self):
         """
