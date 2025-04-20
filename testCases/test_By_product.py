@@ -14,6 +14,7 @@ class Test_By_Prodct:
     def test_by_product(self, setup):
         self.driver = setup
         self.driver.get(self.url)
+        self.driver.implicitly_wait(10)
         self.lp = LoginPage(self.driver)
 
         self.by = ProductPage(self.driver)
