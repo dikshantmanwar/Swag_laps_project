@@ -34,3 +34,7 @@ class ReadValue:
     def getUrl():
         URL = config.get("login_info", "url")
         return URL
+
+
+
+### This is read propeerti file

@@ -29,5 +29,5 @@ jobs:
           # Create the target directory if it doesn't exist
          mv chromedriver-win64/chromedriver.exe Driver/
     - name: Run Selenium Tests
-      run: |
+      run:
         pytest -rA
