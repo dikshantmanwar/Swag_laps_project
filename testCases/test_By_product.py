@@ -45,3 +45,6 @@ class Test_By_Prodct:
         self.log.info("Click on finish button")
         time.sleep(5)
         self.driver.close()
+
+
+## upadte product file
