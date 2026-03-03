@@ -42,6 +42,29 @@ def pytest_html_report_title(report):
     report.title = "Swag Labs Test Automation Report"
 
 
+@pytest.hookimpl(optionalhook=True)
+def pytest_html_results_summary_prefix(prefix):
+    """Add custom CSS styling to the report"""
+    prefix.extend([
+        '<style>',
+        'body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5; }',
+        'h1 { color: white; text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; margin-bottom: 30px; }',
+        'h2 { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; }',
+        'table { border-collapse: collapse; width: 100%; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }',
+        'th { background-color: #3498db; color: white; padding: 12px; text-align: left; font-weight: 600; }',
+        'td { padding: 10px; border-bottom: 1px solid #ecf0f1; }',
+        'tr:hover { background-color: #f8f9fa; }',
+        '.passed { color: #27ae60; font-weight: bold; }',
+        '.failed { color: #e74c3c; font-weight: bold; }',
+        '.skipped { color: #f39c12; font-weight: bold; }',
+        '.error { color: #c0392b; font-weight: bold; }',
+        '#environment, #summary { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }',
+        'img { border: 2px solid #ddd; border-radius: 4px; padding: 5px; cursor: pointer; transition: transform 0.2s; }',
+        'img:hover { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }',
+        '</style>'
+    ])
+
+
 def pytest_html_results_table_header(cells):
     """Customize table headers"""
     cells.insert(2, '<th>Description</th>')
