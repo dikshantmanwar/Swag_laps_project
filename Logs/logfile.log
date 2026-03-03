@@ -1,11 +1,14 @@
-2026-03-03 12:18:08,327: INFO : TestByProduct : test_purchase_products: Test: Login and purchase products
-2026-03-03 12:18:32,480: INFO : TestByProduct : test_purchase_products: Logged in successfully
-2026-03-03 12:18:32,583: INFO : TestByProduct : test_purchase_products: Added backpack to cart
-2026-03-03 12:18:32,695: INFO : TestByProduct : test_purchase_products: Added t-shirt to cart
-2026-03-03 12:18:32,822: INFO : TestByProduct : test_purchase_products: Clicked on cart icon
-2026-03-03 12:18:32,944: INFO : TestByProduct : test_purchase_products: Clicked on checkout
-2026-03-03 12:18:33,216: INFO : TestByProduct : test_purchase_products: Entered checkout details
-2026-03-03 12:18:33,320: INFO : TestByProduct : test_purchase_products: Clicked on continue button
-2026-03-03 12:18:33,422: INFO : TestByProduct : test_purchase_products: Clicked on finish button
-2026-03-03 12:18:33,453: INFO : TestByProduct : test_purchase_products: Order completion message: Thank you for your order!
-2026-03-03 12:18:33,453: INFO : TestByProduct : test_purchase_products: Order completed successfully
+2026-03-03 17:33:31,857: INFO : TestUrlLoginParam : test_login_using_param: Test: Parameterized login test
+2026-03-03 17:33:34,201: INFO : TestUrlLoginParam : test_login_using_param: Entering username: problem_user
+2026-03-03 17:33:34,382: INFO : TestUrlLoginParam : test_login_using_param: Entering password for user: problem_user
+2026-03-03 17:33:57,445: INFO : TestUrlLoginParam : test_login_using_param: Clicked on login button
+2026-02026-03-03 17:34:06,160: INFO : TestUrlLoginParam : test_login_using_param: Login failed as expected for: locked_out_user
+2026-03-03 17:34:06,160: INFO : TestUrlLoginParam : test_login_using_param: Login status: ['Pass']
+2026-03-03 17:34:06,161: INFO : TestUrlLoginParam : test_login_using_param: test_login_params is Passed
+2026-03-03 17:34:06,161: INFO : TestUrlLoginParam : test_login_using_param: test_login_params is Completed
+:58,416: INFO : TestUrlLoginParam : test_login_using_param: test_login_params is Passed
+2026-03-03 17:33:58,416: INFO : TestUrlLoginParam : test_login_using_param: test_login_params is Completed
+ test_login_params is Completed
+only: test
+2026-03-03 17:33:19,098: INFO : TestUrlLogin : test_03_login_with_valid_username_and_without_password: Clicked login button
+2026-03-03 17:33:19,422: INFO : TestUrlLogin : test_03_login_with_valid_username_and_without_password: Captured error message: Epic sadface: Password is required

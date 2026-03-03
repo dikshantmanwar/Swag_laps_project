@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Utilities.readproperties import ReadValue
-from PageObject.LoginPage import LoginPage
+from Utilities.LoginHelper import LoginHelper
 from Utilities.Logger import LogGen
 from PageObject.By_Product import ProductPage
 
@@ -13,9 +13,6 @@ class TestByProduct:
     Test class for product purchase functionality.
     """
 
-    URL = ReadValue.getUrl()
-    USERNAME = ReadValue.getusername()
-    PASSWORD = ReadValue.getPassword()
     FIRST_NAME = ReadValue.getFirstName()
     LAST_NAME = ReadValue.getLastName()
     POSTAL_CODE = ReadValue.getPostalCode()
@@ -24,15 +21,10 @@ class TestByProduct:
     def test_purchase_products(self, setup):
         """Test login and complete product purchase flow"""
         self.driver = setup
-        self.LOG.info("Test: Login and purchase products new")
+        self.LOG.info("Test: Login and purchase products")
         
-        # Login
-        self.driver.get(self.URL)
-        lp = LoginPage(self.driver)
-        lp.get_username(self.USERNAME)
-        lp.get_password(self.PASSWORD)
-        lp.click_on_login()
-        self.LOG.info("Logged in successfully")
+        # Login using helper
+        assert LoginHelper.perform_login(self.driver), "Login failed"
         
         # Initialize product page
         self.by = ProductPage(self.driver)

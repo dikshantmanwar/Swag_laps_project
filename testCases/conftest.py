@@ -2,136 +2,176 @@ import os
 import pytest
 import tempfile
 import shutil
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.edge.options import Options as EdgeOptions
 
-def pytest_addoption(parser):
-    parser.addoption("--browsername", action="store", default="chrome")  # default set to chrome
+# Import pytest-html for screenshot attachment
+try:
+    from pytest_html import extras as pytest_html
+except ImportError:
+    pytest_html = None
 
-@pytest.fixture(scope="function")
+
+def pytest_addoption(parser):
+    parser.addoption("--browsername", action="store", default="chrome")
+
+
+@pytest.fixture(scope="session")
 def browser(request):
     return request.config.getoption("--browsername")
 
-@pytest.fixture(scope="function")
+
+# Pytest-html report customization
+def pytest_configure(config):
+    """Configure pytest-html report with custom metadata"""
+    config._metadata = {
+        "Project Name": "Swag Labs Automation",
+        "Test Environment": "QA",
+        "Application URL": "https://www.saucedemo.com/",
+        "Tester": "Dikshant Manwar",
+        "Browser": config.getoption("--browsername"),
+        "Execution Date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    }
+
+
+@pytest.hookimpl(optionalhook=True)
+def pytest_html_report_title(report):
+    """Customize report title"""
+    report.title = "Swag Labs Test Automation Report"
+
+
+def pytest_html_results_table_header(cells):
+    """Customize table headers"""
+    cells.insert(2, '<th>Description</th>')
+    cells.insert(3, '<th>Time</th>')
+
+
+def pytest_html_results_table_row(report, cells):
+    """Customize table rows"""
+    description = getattr(report, "description", "")
+    cells.insert(2, f'<td>{description}</td>')
+    cells.insert(3, f'<td>{datetime.now().strftime("%H:%M:%S")}</td>')
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    """Capture screenshot on test failure and attach to report"""
+    outcome = yield
+    report = outcome.get_result()
+    
+    # Add test description from docstring
+    docstring = getattr(item.function, '__doc__', '')
+    report.description = docstring.strip() if docstring else ""
+    
+    extras = getattr(report, "extras", [])
+    
+    if report.when == "call" and report.failed:
+        # Capture screenshot on failure
+        if "setup" in item.fixturenames:
+            try:
+                driver = item.funcargs.get("setup")
+                if driver:
+                    # Create screenshot directory if not exists
+                    screenshot_dir = "Screenshot"
+                    os.makedirs(screenshot_dir, exist_ok=True)
+                    
+                    # Generate screenshot filename
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                    test_name = item.nodeid.replace("::", "_").replace("/", "_").replace("\\", "_")
+                    screenshot_name = f"{test_name}_{timestamp}.png"
+                    screenshot_path = os.path.join(screenshot_dir, screenshot_name)
+                    
+                    # Take screenshot
+                    driver.save_screenshot(screenshot_path)
+                    
+                    # Attach to HTML report
+                    if screenshot_path and pytest_html:
+                        html = f'<div><img src="../{screenshot_path}" alt="screenshot" style="width:600px;height:400px;" ' \
+                               f'onclick="window.open(this.src)" align="right"/></div>'
+                        extras.append(pytest_html.html(html))
+            except Exception as e:
+                print(f"Failed to capture screenshot: {str(e)}")
+    
+    report.extras = extras
+
+
+def get_browser_options(browser_type):
+    """Returns configured browser options"""
+    user_data_dir = tempfile.mkdtemp(prefix=f"{browser_type}_test_profile_")
+    
+    prefs = {
+        "credentials_enable_service": False,
+        "profile.password_manager_enabled": False,
+        "password_manager_enabled": False,
+        "profile.default_content_setting_values.notifications": 2,
+        "autofill.profile_enabled": False,
+        "autofill.enabled": False,
+        "profile.password_manager_leak_detection": False,
+    }
+    
+    common_args = [
+        f"--user-data-dir={user_data_dir}",
+        "--disable-blink-features=AutomationControlled",
+        "--disable-save-password-bubble",
+        "--disable-features=PasswordManager,PasswordManagerOnboarding",
+        "--disable-password-manager-reauthentication",
+        "--password-store=basic",
+        "--use-mock-keychain"
+    ]
+    
+    if os.getenv("CI", "").lower() == "true":
+        common_args.extend([
+            "--headless",
+            "--no-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-gpu",
+            "--window-size=1920,1080"
+        ])
+    
+    if browser_type == "chrome":
+        options = Options()
+    else:
+        options = EdgeOptions()
+    
+    for arg in common_args:
+        options.add_argument(arg)
+    
+    options.add_experimental_option("prefs", prefs)
+    options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
+    options.add_experimental_option("useAutomationExtension", False)
+    
+    return options, user_data_dir
+
+
+@pytest.fixture(scope="class")
 def setup(request, browser):
     """
-    Function-scoped fixture that creates a browser instance for each test.
-    This allows parallel test execution.
+    Class-scoped fixture - one browser per test class.
+    Enables parallel execution at class level with pytest-xdist.
     """
+    user_data_dir = None
+    
     if browser == "chrome":
-        options = Options()
-        
-        # Create a clean temporary profile directory
-        user_data_dir = tempfile.mkdtemp(prefix="chrome_test_profile_")
-        options.add_argument(f"--user-data-dir={user_data_dir}")
-        
-        # Aggressive password manager disabling
-        prefs = {
-            "credentials_enable_service": False,
-            "profile.password_manager_enabled": False,
-            "password_manager_enabled": False,
-            "profile.default_content_setting_values.notifications": 2,
-            "autofill.profile_enabled": False,
-            "autofill.enabled": False,
-            "profile.password_manager_leak_detection": False,
-        }
-        options.add_experimental_option("prefs", prefs)
-        options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
-        options.add_experimental_option("useAutomationExtension", False)
-        
-        # Chrome arguments to disable password features
-        options.add_argument("--disable-blink-features=AutomationControlled")
-        options.add_argument("--disable-save-password-bubble")
-        options.add_argument("--disable-features=PasswordManager,PasswordManagerOnboarding")
-        options.add_argument("--disable-password-manager-reauthentication")
-        options.add_argument("--password-store=basic")
-        options.add_argument("--use-mock-keychain")
-        
-        # Enable headless mode only in CI (like GitHub Actions)
-        if os.getenv("CI", "").lower() == "true":
-            options.add_argument("--headless")
-            options.add_argument("--no-sandbox")
-            options.add_argument("--disable-dev-shm-usage")
-            options.add_argument("--disable-gpu")
-            options.add_argument("--window-size=1920,1080")
-
+        options, user_data_dir = get_browser_options("chrome")
         driver = webdriver.Chrome(options=options)
-
     elif browser == "edge":
-        options = EdgeOptions()
-        
-        # Create a clean temporary profile directory
-        user_data_dir = tempfile.mkdtemp(prefix="edge_test_profile_")
-        options.add_argument(f"--user-data-dir={user_data_dir}")
-        
-        # Aggressive password manager disabling for Edge
-        prefs = {
-            "credentials_enable_service": False,
-            "profile.password_manager_enabled": False,
-            "password_manager_enabled": False,
-            "profile.default_content_setting_values.notifications": 2,
-            "autofill.profile_enabled": False,
-            "autofill.enabled": False,
-            "profile.password_manager_leak_detection": False,
-        }
-        options.add_experimental_option("prefs", prefs)
-        options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
-        options.add_experimental_option("useAutomationExtension", False)
-        
-        options.add_argument("--disable-blink-features=AutomationControlled")
-        options.add_argument("--disable-save-password-bubble")
-        options.add_argument("--disable-features=PasswordManager,PasswordManagerOnboarding")
-        options.add_argument("--disable-password-manager-reauthentication")
-        options.add_argument("--password-store=basic")
-        options.add_argument("--use-mock-keychain")
-
-        if os.getenv("CI", "").lower() == "true":
-            options.add_argument("--headless")
-            options.add_argument("--no-sandbox")
-            options.add_argument("--disable-dev-shm-usage")
-            options.add_argument("--disable-gpu")
-            options.add_argument("--window-size=1920,1080")
-
+        options, user_data_dir = get_browser_options("edge")
         driver = webdriver.Edge(options=options)
-
     else:
         driver = webdriver.Chrome()
-
+    
     driver.maximize_window()
     driver.implicitly_wait(20)
     
+    request.cls.driver = driver
+    
     yield driver
     
-    # Cleanup
     driver.quit()
-    
-    # Clean up temporary profile directory
-    try:
-        if 'user_data_dir' in locals():
-            shutil.rmtree(user_data_dir, ignore_errors=True)
-    except:
-        pass
-
-
-@pytest.fixture(autouse=True, scope="function")
-def clear_state(request):
-    """
-    Clears browser state before each test to ensure clean state.
-    Only runs if setup fixture is used in the test.
-    """
-    # Only clear state if the test used the setup fixture
-    if 'setup' in request.fixturenames:
-        driver = request.getfixturevalue('setup')
-        try:
-            driver.delete_all_cookies()
-            driver.execute_script("window.localStorage.clear();")
-            driver.execute_script("window.sessionStorage.clear();")
-        except:
-            pass
-    
-    yield
+    if user_data_dir:
+        shutil.rmtree(user_data_dir, ignore_errors=True)
 
 
 @pytest.fixture(
@@ -144,13 +184,3 @@ def clear_state(request):
 )
 def getDataForLogin(request):
     return request.param
-
-
-# @pytest.hookimpl(tryfirst=True)
-# def pytest_html_report_title(report):
-#     report.title = "My Test Report"
-
-
-# @pytest.hookimpl(tryfirst=True)
-# def pytest_html_results_summary(prefix):
-#     prefix.append("<h2>My Custom Header</h2>")
