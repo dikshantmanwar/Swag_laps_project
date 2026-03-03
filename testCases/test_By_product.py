@@ -24,7 +24,7 @@ class TestByProduct:
     def test_purchase_products(self, setup):
         """Test login and complete product purchase flow"""
         self.driver = setup
-        self.LOG.info("Test: Login and purchase products")
+        self.LOG.info("Test: Login and purchase products new")
         
         # Login
         self.driver.get(self.URL)
