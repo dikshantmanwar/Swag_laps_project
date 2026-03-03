@@ -3,7 +3,7 @@ from Utilities.readproperties import ReadValue
 from Utilities.Logger import LogGen
 from PageObject.LoginPage import LoginPage
 
-@pytest.mark.usefixtures("setup")
+
 class TestUrlLogin:
     """
     Test class for login functionality.
@@ -17,7 +17,8 @@ class TestUrlLogin:
     LOG = LogGen.loggen()
 
     @pytest.mark.invalid_login
-    def test_login_with_invalid_username_and_password(self):
+    def test_01_login_with_invalid_username_and_password(self, setup):
+        self.driver = setup
         self.LOG.info("Test: Login with invalid username and password")
         self.driver.get(self.URL)
         self.LOG.info("Navigated to URL: %s", self.URL)
@@ -39,7 +40,8 @@ class TestUrlLogin:
         assert Expected_error == Actual_error, "Assertion failed"
 
     @pytest.mark.invalid_login
-    def test_login_without_username_and_with_password(self):
+    def test_02_login_without_username_and_with_password(self, setup):
+        self.driver = setup
         self.LOG.info("Test: Login without username and with password")
         self.driver.get(self.URL)
         self.LOG.info("Navigated to URL: %s", self.URL)
@@ -57,7 +59,8 @@ class TestUrlLogin:
         Expected_error = "Epic sadface: Username is required"
         assert Expected_error == Actual_error, "Assertion failed - Expected: %s | Got: %s" % (Expected_error, Actual_error)
 
-    def test_login_with_valid_username_and_without_password(self):
+    def test_03_login_with_valid_username_and_without_password(self, setup):
+        self.driver = setup
         self.LOG.info("Test: Login with username but no password")
         self.driver.get(self.URL)
         self.LOG.info("Navigated to URL: %s", self.URL)
@@ -74,7 +77,9 @@ class TestUrlLogin:
 
         Expected_error = "Epic sadface: Password is required"
         assert Expected_error == Actual_error, "Assertion failed - Expected: %s | Got: %s" % (Expected_error, Actual_error)
-    def test_login_valid_username_password(self):
+
+    def test_04_login_valid_username_password(self, setup):
+        self.driver = setup
         self.LOG.info("Test: Login with valid username and password")
         self.driver.get(self.URL)
         self.LOG.info("Navigated to URL: %s", self.URL)

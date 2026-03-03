@@ -34,3 +34,18 @@ class ReadValue:
     def getUrl():
         URL = config.get("login_info", "url")
         return URL
+
+    @staticmethod
+    def getFirstName():
+        firstname = config.get("checkout_info", "firstname")
+        return firstname
+
+    @staticmethod
+    def getLastName():
+        lastname = config.get("checkout_info", "lastname")
+        return lastname
+
+    @staticmethod
+    def getPostalCode():
+        postalcode = config.get("checkout_info", "postalcode")
+        return postalcode
